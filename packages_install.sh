@@ -10,110 +10,58 @@ echo "Press ENTER to continue..."
 read
 
 apt upgrade -y
+apt update -y
 
-packages_list=(boost-devel
-               boost-static
-               ca-certificates.noarch
-               clang
+packages_list=(libboost-all-dev
+               apt-transport-https
+               ca-certificates
                cmake
-               CUnit-devel
                curl
-               flac-devel
-               freetype-devel
                gcc
-               gcc-c++
+               g++
                gdb
                git
-               glibc
-               glibc-devel
-               glibc-locale-source
-               gmp-devel
-               ksh
-               elfutils-libelf-devel
-               libjpeg-turbo-devel
-               libvorbis-devel
-               SDL2
-               SDL2-static
-               SDL2-devel
-               libX11-devel
-               libXext-devel
+               glibc-source
                ltrace
                make
-               nasm
-               ncurses
-               ncurses-devel
-               ncurses-libs
+               libncurses5-dev
+               libncursesw5-dev
                net-tools
-               openal-soft-devel
                python3-numpy
                python3
-               rlwrap
                ruby
                strace
                tar
-               tcsh
+               csh
                tmux
                sudo
                tree
                unzip
                valgrind
                vim
-               emacs-nox
-               which
-               xcb-util-image
-               xcb-util-image-devel
+               emacs
                zip
                zsh
-               avr-gcc
-               qt-devel
-               docker
-               docker-compose
-               java-17-openjdk
-               java-17-openjdk-devel
-               boost
-               boost-math
-               boost-graph
+               docker-ce
+               openjdk-17-jdk
+               openjdk-17-jre
                autoconf
                automake
                tcpdump
                wireshark
                nodejs
-               emacs-tuareg
-               libvirt
-               libvirt-devel
-               virt-install
-               haskell-platform
                golang
-               systemd-devel
-               libgudev-devel
                php
-               php-devel
-               php-bcmath
                php-cli
-               php-gd
                php-mbstring
                php-mysqlnd
                php-pdo
-               php-pear.noarch
-               php-xml
-               php-gettext-gettext.noarch
-               php-phar-io-version.noarch
-               php-theseer-tokenizer.noarch
-               SFML
-               SFML-devel
-               CSFML
-               CSFML-devel
-               irrlicht
-               irrlicht-devel
-               rust
-               cargo
-               mariadb-server
-               x264
-               lightspark
-               lightspark-mozilla-plugin
-               teams)
+               php-xml)
 
 apt -y install ${packages_list[@]}
+
+# CSFML
+curl "https://raw.githubusercontent.com/Grainbox/epitech_install/main/install_csfml.sh?token=GHSAT0AAAAAABYNEAXYILC6SBY2URUAFUSIYZIQHXQ" | bash
 
 # Criterion
 curl -sSL "https://github.com/Snaipe/Criterion/releases/download/v2.4.0/criterion-2.4.0-linux-x86_64.tar.xz" -o criterion-2.4.0.tar.xz
