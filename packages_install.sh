@@ -9,6 +9,7 @@ fi
 echo "Press ENTER to continue..."
 read
 
+apt update -y
 apt upgrade -y
 apt update -y
 
@@ -42,7 +43,6 @@ packages_list=(libboost-all-dev
                emacs
                zip
                zsh
-               docker-ce
                openjdk-17-jdk
                openjdk-17-jre
                autoconf
@@ -59,6 +59,13 @@ packages_list=(libboost-all-dev
                php-xml)
 
 apt -y install ${packages_list[@]}
+
+# DOCKER
+apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu `lsb_release -cs` test"
+apt update
+apt install docker-ce
 
 # CSFML
 curl "https://raw.githubusercontent.com/Grainbox/epitech_install/main/install_csfml.sh?token=GHSAT0AAAAAABYNEAXYILC6SBY2URUAFUSIYZIQHXQ" | bash
