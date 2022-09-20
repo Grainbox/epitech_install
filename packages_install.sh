@@ -8,9 +8,6 @@ if [[ $EUID -ne 0 ]]; then
 fi
 echo "Press ENTER to continue..."
 read
-echo "Enter your default Linux Username"
-read -r username
-
 
 apt update -y
 apt upgrade -y
@@ -104,6 +101,6 @@ apt install docker-ce
 
 # OH-MY-ZSH
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-chsh $username /usr/bin/zsh
+chsh -s $(which zsh)
 
 echo DONE
