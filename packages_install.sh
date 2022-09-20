@@ -8,6 +8,9 @@ if [[ $EUID -ne 0 ]]; then
 fi
 echo "Press ENTER to continue..."
 read
+echo "Enter your default Linux Username"
+read username
+
 
 apt update -y
 apt upgrade -y
@@ -98,5 +101,9 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu `lsb_release -cs` test"
 apt update
 apt install docker-ce
+
+# OH-MY-ZSH
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+chsh $username /usr/bin/zsh
 
 echo DONE
