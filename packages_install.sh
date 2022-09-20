@@ -9,7 +9,7 @@ fi
 echo "Press ENTER to continue..."
 read
 echo "Enter your default Linux Username"
-read username
+read -r username
 
 
 apt update -y
