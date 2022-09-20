@@ -6,8 +6,6 @@ if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root" 1>&2
    exit 1
 fi
-echo "Press ENTER to continue..."
-read
 
 apt update -y
 apt upgrade -y
@@ -59,7 +57,7 @@ packages_list=(libboost-all-dev
                php-pdo
                php-xml)
 
-apt -y install ${packages_list[@]}
+apt -y install ${packages_list[@]} autoremove
 
 # CSFML
 curl "https://raw.githubusercontent.com/Grainbox/epitech_install/main/install_csfml.sh?token=GHSAT0AAAAAABYNEAXYILC6SBY2URUAFUSIYZIQHXQ" | bash
