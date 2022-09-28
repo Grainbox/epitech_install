@@ -48,5 +48,3 @@ sudo ldconfig
 echo -e "\n\n"
 echo "CSFML $SFML_VERSION has been installed"
 echo "Please remember to add -lcsfml-graphics -lcsfml-audio -lcsfml-window -lcsfml-system -lsfml-graphics -lsfml-audio -lsfml-window -lsfml-system in your Makefile"
-echo
-echo "2017 - Paul Laffitte - Epitech Montpellier Promo 2021"
